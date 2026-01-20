@@ -21,7 +21,9 @@
   "author": "Dmitri Akatov",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "npm-check": "npm-check --skip-unused --save-exact --update",
+    "test": "vitest"
   },
   "bin": {
     "templates": "./index.ts"
@@ -41,6 +43,7 @@
     "@ianvs/prettier-plugin-sort-imports": "4.7.0",
     "@types/node": "24.10.9",
     "effect": "3.19.14",
+    "npm-check": "6.0.1",
     "prettier": "3.8.0",
     "tar": "7.5.4",
     "tsx": "4.21.0",
