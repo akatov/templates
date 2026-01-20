@@ -3,15 +3,16 @@
 
   "name": "akatov/templates",
 
-  "build": { "dockerfile": "Dockerfile", "context": ".." },
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
 
   "workspaceMount": "source=${localWorkspaceFolder},target=/code,type=bind,consistency=cached",
   "workspaceFolder": "/code",
   "mounts": [
     "source=${localWorkspaceFolder}/.devcontainer/.claude,target=/home/node/.claude,type=bind,consistency=delegated",
-    // "target=/code/node_modules,type=volume",
-    // "target=/code/.pnpm-store,type=volume",
-    "target=/code/tmp,type=volume"
+    "target=/code/node_modules,type=volume"
   ],
 
   "customizations": {

@@ -20,12 +20,13 @@
   "license": "ISC",
   "author": "Dmitri Akatov",
   "type": "module",
-  "main": "index.js",
   "scripts": {
-    "build": "echo \"no build yet\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "templates": "index.js"
+    "templates": "./index.ts"
+  },
+  "devDependencies": {
+    "tsx": "4.21.0"
   }
 }

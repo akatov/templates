@@ -8,9 +8,11 @@ RUN apt-get -y install git
 RUN curl -fsSL https://dprint.dev/install.sh | DPRINT_INSTALL="/usr/local" sh
 RUN which dprint
 
-RUN npm install -g pnpm
-
 USER node
 WORKDIR /code
 
-RUN mkdir tmp
+# COPY package.json ./
+# COPY package-lock.json ./
+# RUN npm install
+
+RUN mkdir node_modules
