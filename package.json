@@ -1,0 +1,31 @@
+{
+  "name": "templates",
+  "version": "0.0.0",
+  "description": "development templates",
+  "keywords": [
+    "template",
+    "devcontainer",
+    "workspace",
+    "monorepo",
+    "packages"
+  ],
+  "homepage": "https://github.com/akatov/templates#readme",
+  "bugs": {
+    "url": "https://github.com/akatov/templates/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akatov/templates.git"
+  },
+  "license": "ISC",
+  "author": "Dmitri Akatov",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"no build yet\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "templates": "index.js"
+  }
+}
