@@ -1,0 +1,7 @@
+node_modules/
+.pnpm-store/
+
+/tmp
+/.devcontainer/devcontainer.env
+!/.devcontainer/.claude/.gitkeep
+/.devcontainer/.claude
