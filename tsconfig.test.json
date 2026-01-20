@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "test",
+  "extends": "./templates/devcontainer/packages/lib-typescript/vitest.json",
+  "include": ["*.test.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "tsBuildInfoFile": "tmp/.tsbuildinfo/test.tsbuildinfo"
+  }
+}

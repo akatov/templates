@@ -1,5 +1,5 @@
 #!/usr/bin/env -S npx tsx
 
-import Greeting from './greeting.js';
+import Greeting from './src/greeting';
 
 console.info(Greeting);

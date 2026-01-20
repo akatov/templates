@@ -11,8 +11,9 @@ RUN which dprint
 USER node
 WORKDIR /code
 
-# COPY package.json ./
-# COPY package-lock.json ./
-# RUN npm install
-
+RUN mkdir .pnpm-store
 RUN mkdir node_modules
+RUN mkdir tmp
+
+COPY package.json package-lock.json ./
+RUN npm ci
