@@ -8,21 +8,17 @@ import {
 } from "@effect/platform-node";
 import { Ansi, AnsiDoc } from "@effect/printer-ansi";
 
-import { cli } from "./src/Cli.js";
-import { GitHub } from "./src/GitHub.js";
-import { AnsiDocLogger } from "./src/Logger.js";
+import cli from "./src/Cli.js";
+import GitHub from "./src/GitHub.js";
+import AnsiDocLogger from "./src/Logger.js";
 
-const MainLive = GitHub.Default.pipe(
-  Layer.provideMerge(
-    Layer.mergeAll(
-      Logger.replace(Logger.defaultLogger, AnsiDocLogger),
-      Logger.minimumLogLevel(LogLevel.Info),
-      CliConfig.layer({ showBuiltIns: false }),
-      NodeContext.layer,
-      NodeHttpClient.layerUndici,
-    ),
-  ),
-);
+const MainLive = Layer.mergeAll(
+  GitHub.Default,
+  Logger.replace(Logger.defaultLogger, AnsiDocLogger),
+  Logger.minimumLogLevel(LogLevel.Info),
+  CliConfig.layer({ showBuiltIns: false }),
+  NodeContext.layer,
+).pipe(Layer.provide(NodeHttpClient.layerUndici));
 
 cli(process.argv).pipe(
   Effect.catchTags({

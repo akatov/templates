@@ -1,7 +1,7 @@
 import { Array, Logger } from "effect";
 import { Ansi, AnsiDoc } from "@effect/printer-ansi";
 
-export const AnsiDocLogger = Logger.make(({ message }) => {
+const AnsiDocLogger = Logger.make(({ message }) => {
   const messageArr = Array.ensure(message);
   for (let i = 0; i < messageArr.length; i++) {
     const currentMessage = messageArr[i];
@@ -19,3 +19,5 @@ export const AnsiDocLogger = Logger.make(({ message }) => {
     }
   }
 });
+
+export default AnsiDocLogger;

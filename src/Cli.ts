@@ -5,7 +5,7 @@ import { Ansi, AnsiDoc } from "@effect/printer-ansi";
 import * as Yaml from "yaml";
 
 import { ProjectType, templates, type Template } from "./Domain.js";
-import { GitHub } from "./GitHub.js";
+import GitHub from "./GitHub.js";
 import { validateProjectName } from "./Utils.js";
 
 // =============================================================================
@@ -82,10 +82,12 @@ const command = Command.make("create-akatov-app", options).pipe(
   Command.withHandler(handleCommand),
 );
 
-export const cli = Command.run(command, {
+const cli = Command.run(command, {
   name: "Create Akatov App",
   version: "v0.0.0",
 });
+
+export default cli;
 
 // =============================================================================
 // Utilities
