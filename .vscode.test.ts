@@ -1,7 +1,13 @@
 import { describe, it } from "@effect/vitest";
 
 describe(".vscode/", () => {
-  it("should be the same everywhere somewhat", () => {
-    // TODO: check templates directory for .vscode and make sure they are all similar
+  describe("extensions.json", () => {
+    it("should be similar everywhere");
+  });
+  describe("settings.json", () => {
+    it("should be similar everywhere");
+  });
+  describe("launch.json", () => {
+    it("should be similar everywhere");
   });
 });

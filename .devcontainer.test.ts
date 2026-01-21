@@ -1,7 +1,10 @@
 import { describe, it } from "@effect/vitest";
 
 describe(".devcontainer/", () => {
-  it("should be the same everywhere somewhat", () => {
-    // TODO: check templates directory for .devcontainer and make sure they are similar
+  describe("devcontainer.json", () => {
+    it("should be the same everywhere somewhat");
+  });
+  describe("Dockerfile", () => {
+    it("should be similar everywhere");
   });
 });

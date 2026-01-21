@@ -23,7 +23,8 @@
   "scripts": {
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "npm-check": "npm-check --skip-unused --save-exact --update",
-    "test": "vitest"
+    "test": "vitest",
+    "type-check": "tsc --build"
   },
   "bin": {
     "templates": "./index.ts"

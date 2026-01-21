@@ -1,12 +1,9 @@
-import * as HelpDoc from "@effect/cli/HelpDoc"
-import * as Effect from "effect/Effect"
+import { Effect } from "effect";
+import { HelpDoc } from "@effect/cli";
 
-const SCOPED_PACKAGE_REGEX = /^(?:@([^/]+?)[/])?([^/]+?)$/
+const SCOPED_PACKAGE_REGEX = /^(?:@([^/]+?)[/])?([^/]+?)$/;
 
-const blockList = [
-  "node_modules",
-  "favicon.ico"
-]
+const blockList = ["node_modules", "favicon.ico"];
 
 // Generated with node -e 'console.log(require("module").builtinModules)'
 const nodeBuiltins = [
@@ -77,55 +74,66 @@ const nodeBuiltins = [
   "vm",
   "wasi",
   "worker_threads",
-  "zlib"
-]
+  "zlib",
+];
 
-const invalid = (message: string) => Effect.fail(HelpDoc.p(message))
+const invalid = (message: string) => Effect.fail(HelpDoc.p(message));
 
-export function validateProjectName(name: string): Effect.Effect<string, HelpDoc.HelpDoc> {
+export function validateProjectName(
+  name: string,
+): Effect.Effect<string, HelpDoc.HelpDoc> {
   if (name.length === 0) {
-    return invalid("Project name must be a non-empty string")
+    return invalid("Project name must be a non-empty string");
   }
   if (name.length > 214) {
-    return invalid("Project name must not contain more than 214 characters")
+    return invalid("Project name must not contain more than 214 characters");
   }
   if (name.toLowerCase() !== name) {
-    return invalid("Project name must not contain capital letters")
+    return invalid("Project name must not contain capital letters");
   }
   if (name.trim() !== name) {
-    return invalid("Project name must not contain leading or trailing whitespace")
+    return invalid(
+      "Project name must not contain leading or trailing whitespace",
+    );
   }
   if (name.match(/^\./)) {
-    return invalid("Project name must not start with a period")
+    return invalid("Project name must not start with a period");
   }
   if (name.match(/^_/)) {
-    return invalid("Project name must not start with an underscore")
+    return invalid("Project name must not start with an underscore");
   }
   if (/[~'!()*]/.test(name.split("/").slice(-1)[0]!)) {
-    return invalid("Project name must not contain the special scharacters ~'!()*")
+    return invalid(
+      "Project name must not contain the special scharacters ~'!()*",
+    );
   }
   const isNodeBuiltin = nodeBuiltins.some((builtinName) => {
-    return name.toLowerCase() === builtinName
-  })
+    return name.toLowerCase() === builtinName;
+  });
   if (isNodeBuiltin) {
-    return invalid("Project name must not be a NodeJS built-in module name")
+    return invalid("Project name must not be a NodeJS built-in module name");
   }
   const isBlockedName = blockList.some((blockedName) => {
-    return name.toLowerCase() === blockedName
-  })
+    return name.toLowerCase() === blockedName;
+  });
   if (isBlockedName) {
-    return invalid(`Project name '${name}' is blocked from use`)
+    return invalid(`Project name '${name}' is blocked from use`);
   }
   if (encodeURIComponent(name) !== name) {
     // Check scoped packages
-    const result = name.match(SCOPED_PACKAGE_REGEX)
+    const result = name.match(SCOPED_PACKAGE_REGEX);
     if (result) {
-      const user = result[1]!
-      const pkg = result[2]!
-      if (encodeURIComponent(user) !== user || encodeURIComponent(pkg) !== pkg) {
-        return invalid("Project name must only contain URL-friendly characters")
+      const user = result[1]!;
+      const pkg = result[2]!;
+      if (
+        encodeURIComponent(user) !== user ||
+        encodeURIComponent(pkg) !== pkg
+      ) {
+        return invalid(
+          "Project name must only contain URL-friendly characters",
+        );
       }
     }
   }
-  return Effect.succeed(name)
+  return Effect.succeed(name);
 }

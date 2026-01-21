@@ -3,9 +3,7 @@ export default {
   singleQuote: false,
   plugins: [
     "@ianvs/prettier-plugin-sort-imports",
-    "prettier-plugin-tailwindcss",
   ],
-  tailwindFunctions: ["cva", "cn"],
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
   importOrderTypeScriptVersion: "5.9.3",
   importOrder: [
