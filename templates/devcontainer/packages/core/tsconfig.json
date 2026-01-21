@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "@packages/core",
+  "extends": "@packages/lib-typescript/base.json",
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mts", "eslint.config.mjs"],
+  "exclude": ["node_modules"]
+}

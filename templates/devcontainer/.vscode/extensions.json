@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "dprint.dprint",
+    "effectful-tech.effect-vscode",
+    "esbenp.prettier-vscode",
+    "ms-python.black-formatter",
+    "ms-python.debugpy",
+    "ms-python.isort",
+    "ms-python.mypy-type-checker",
+    "ms-python.pylint",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "statelyai.stately-vscode",
+    "tamasfe.even-better-toml",
+    "vitest.explorer"
+  ]
+}

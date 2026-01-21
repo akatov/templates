@@ -1,0 +1,17 @@
+services:
+  postgres.localtest.me:
+    image: postgres:17
+    command: '-d 1'
+    volumes:
+      - ./var/postgres/data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=main
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 10s
+      timeout: 5s
+      retries: 5

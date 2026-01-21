@@ -1,0 +1,51 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainer.schema.json",
+  "name": "PLACEHOLDER",
+
+  //   "dockerComposeFile": ["../docker-compose.yml", "docker-compose.extend.yml"],
+  //   "service": "development",
+  //   "shutdownAction": "stopCompose",
+
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "runArgs": [
+    "--env-file",
+    "${localWorkspaceFolder}/.devcontainer/devcontainer.env"
+  ],
+  "workspaceFolder": "/code",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/code,type=bind,consistency=cached",
+  "mounts": [
+    "source=${localWorkspaceFolder}/.devcontainer/.claude,target=/home/node/.claude,type=bind,consistency=delegated",
+    "target=/code/node_modules,type=volume",
+    "target=/code/.pnpm-store,type=volume",
+    "target=/code/tmp,type=volume"
+  ],
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint",
+        "dprint.dprint",
+        "effectful-tech.effect-vscode",
+        "esbenp.prettier-vscode",
+        "ms-python.black-formatter",
+        "ms-python.debugpy",
+        "ms-python.isort",
+        "ms-python.mypy-type-checker",
+        "ms-python.pylint",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "statelyai.stately-vscode",
+        "tamasfe.even-better-toml",
+        "vitest.explorer"
+      ]
+    }
+  },
+
+  "features": {
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  }
+}

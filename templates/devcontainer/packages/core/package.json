@@ -1,3 +1,6 @@
 {
-  "name": "@packages/core"
+  "name": "@packages/core",
+  "dependencies": {
+    "effect": "3.19.14"
+  }
 }

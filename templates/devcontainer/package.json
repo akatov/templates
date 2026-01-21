@@ -6,33 +6,24 @@
     "packages/*"
   ],
   "scripts": {
-    "check": "tsc",
+    "check": "tsc --build",
     "lint": "eslint",
     "test": "vitest"
   },
   "devDependencies": {
-    "@effect/eslint-plugin": "latest",
-    "@effect/language-service": "latest",
-    "@effect/vitest": "latest",
-    "@eslint/compat": "latest",
-    "@eslint/eslintrc": "latest",
-    "@eslint/js": "latest",
-    "@types/node": "latest",
-    "@typescript-eslint/eslint-plugin": "latest",
-    "@typescript-eslint/parser": "latest",
-    "effect": "latest",
-    "eslint": "latest",
-    "eslint-import-resolver-typescript": "latest",
-    "eslint-plugin-codegen": "latest",
-    "eslint-plugin-import": "latest",
-    "eslint-plugin-simple-import-sort": "latest",
-    "eslint-plugin-sort-destructure-keys": "latest",
-    "tsx": "latest",
-    "typescript": "latest",
-    "vitest": "latest"
+    "@packages/lib-typescript": "workspace:*",
+    "@effect/vitest": "0.27.0",
+    "@ianvs/prettier-plugin-sort-imports": "4.7.0",
+    "@types/node": "24.10.9",
+    "effect": "3.19.14",
+    "npm-check": "6.0.1",
+    "prettier": "3.8.0",
+    "vitest": "4.0.17"
   },
   "pnpm": {
-    "patchedDependencies": {
-    }
+    "overrides": {
+      "vitest": "4.0.17"
+    },
+    "patchedDependencies": {}
   }
 }
