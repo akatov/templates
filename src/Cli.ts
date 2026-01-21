@@ -21,7 +21,7 @@ const projectName = Args.directory({ name: "project-name", exists: "no" }).pipe(
   Args.optional,
 );
 
-const templateType = Options.choice("template", templates).pipe(
+const template = Options.choice("template", templates).pipe(
   Options.withAlias("t"),
   Options.withDescription(
     "The name of an official Effect template to use to bootstrap the application",
@@ -47,7 +47,7 @@ const withWorkflows = Options.boolean("workflows").pipe(
 );
 
 const projectType: Options.Options<Option.Option<ProjectType>> = Options.all({
-  template: templateType,
+  template,
   withChangesets,
   withNixFlake,
   withESLint,
@@ -77,15 +77,13 @@ const options = {
   projectType,
 };
 
-const command = Command.make("create-effect-app", options).pipe(
-  Command.withDescription(
-    "Create an Effect application from an example or a template repository",
-  ),
+const command = Command.make("create-akatov-app", options).pipe(
+  Command.withDescription("Create a new application from Dmitri's template"),
   Command.withHandler(handleCommand),
 );
 
 export const cli = Command.run(command, {
-  name: "Create Effect App",
+  name: "Create Akatov App",
   version: "v0.0.0",
 });
 

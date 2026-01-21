@@ -1,5 +1,5 @@
 {
-  "name": "templates",
+  "name": "create-akatov-app",
   "version": "0.0.0",
   "description": "development templates",
   "keywords": [
@@ -27,7 +27,7 @@
     "type-check": "tsc --build"
   },
   "bin": {
-    "templates": "./index.ts"
+    "create-akatov-app": "./index.ts"
   },
   "engines": {
     "node": "24"
