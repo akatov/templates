@@ -1,4 +1,5 @@
 #!/usr/bin/env -S npx tsx
+import { EventEmitter } from "events";
 import { Effect, Layer, Logger, LogLevel } from "effect";
 import { CliConfig } from "@effect/cli";
 import {
@@ -11,6 +12,9 @@ import { Ansi, AnsiDoc } from "@effect/printer-ansi";
 import cli from "./src/Cli.js";
 import GitHub from "./src/GitHub.js";
 import AnsiDocLogger from "./src/Logger.js";
+
+// otherwise there's a MaxListenersExceededWarning warning on OSX
+EventEmitter.defaultMaxListeners = 20;
 
 const MainLive = Layer.mergeAll(
   GitHub.Default,
