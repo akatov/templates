@@ -1,15 +1,17 @@
-import { Array, Effect, pipe } from "effect";
+import { builtinModules } from "node:module";
+import { Array, Effect, pipe, Schema } from "effect";
 import { describe, expect, it } from "@effect/vitest";
 
-import { validateProjectName } from "./Utils.js";
+import { ProjectName } from "./Utils.js";
 
-describe(validateProjectName, () => {
+const decode = Schema.decode(ProjectName);
+
+describe(ProjectName, () => {
   const expectSuccess = (name: string) =>
-    validateProjectName(name).pipe(
-      Effect.map((result) => expect(result).toBe(name)),
-    );
+    decode(name).pipe(Effect.map((result) => expect(result).toBe(name)));
   const expectFailure = (name: string) =>
-    Effect.flip(validateProjectName(name)).pipe(
+    decode(name).pipe(
+      Effect.flip,
       Effect.map((error) => expect(error).toBeDefined()),
     );
 
@@ -56,11 +58,7 @@ describe(validateProjectName, () => {
   );
 
   it.effect("rejects Node.js builtin module names", () =>
-    pipe(
-      ["fs", "path", "http", "crypto", "buffer"],
-      Array.map(expectFailure),
-      Effect.all,
-    ),
+    pipe(builtinModules, Array.map(expectFailure), Effect.all),
   );
 
   it.effect("rejects blocked names", () =>
