@@ -33,24 +33,26 @@
     "node": "24"
   },
   "packageManager": "npm@11.6.2",
-  "devDependencies": {
+  "dependencies": {
     "@effect/cli": "0.73.0",
-    "@effect/language-service": "0.71.2",
     "@effect/platform": "0.94.1",
     "@effect/platform-node": "0.104.0",
     "@effect/printer": "0.47.0",
     "@effect/printer-ansi": "0.47.0",
+    "effect": "3.19.14",
+    "tar": "7.5.4",
+    "tsx": "4.21.0",
+    "yaml": "2.8.2"
+  },
+  "devDependencies": {
+    "@effect/language-service": "0.71.2",
     "@effect/vitest": "0.27.0",
     "@ianvs/prettier-plugin-sort-imports": "4.7.0",
     "@types/node": "24.10.9",
-    "effect": "3.19.14",
     "npm-check": "6.0.1",
     "prettier": "3.8.0",
-    "tar": "7.5.4",
-    "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "vitest": "4.0.17",
-    "yaml": "2.8.2"
+    "vitest": "4.0.17"
   },
   "overrides": {
     "@types/node": "24.10.9",

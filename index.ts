@@ -1,16 +1,12 @@
 #!/usr/bin/env -S npx tsx
-import * as MM from "module";
-import * as MMM from "node:module";
-import * as Effect from "effect/Effect";
-import * as Layer from "effect/Layer";
-import * as Logger from "effect/Logger";
-import * as LogLevel from "effect/LogLevel";
-import * as CliConfig from "@effect/cli/CliConfig";
-import * as NodeContext from "@effect/platform-node/NodeContext";
-import * as NodeHttpClient from "@effect/platform-node/NodeHttpClient";
-import * as NodeRuntime from "@effect/platform-node/NodeRuntime";
-import * as Ansi from "@effect/printer-ansi/Ansi";
-import * as AnsiDoc from "@effect/printer-ansi/AnsiDoc";
+import { Effect, Layer, Logger, LogLevel } from "effect";
+import { CliConfig } from "@effect/cli";
+import {
+  NodeContext,
+  NodeHttpClient,
+  NodeRuntime,
+} from "@effect/platform-node";
+import { Ansi, AnsiDoc } from "@effect/printer-ansi";
 
 import { cli } from "./src/Cli.js";
 import { GitHub } from "./src/GitHub.js";
