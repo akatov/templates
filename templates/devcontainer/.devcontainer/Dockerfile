@@ -30,6 +30,12 @@ RUN apt-get --yes install git
 RUN apt-get --yes install chromium
 RUN apt-get --yes install curl
 RUN apt-get --yes install unzip
+RUN apt-get --yes install zsh
+
+# Setup zsh to load nix and direnv (matching bash setup)
+RUN echo '[[ $ENVRC_RUN != yes ]] && source /etc/envrc' >> /etc/zsh/zprofile
+RUN echo '[[ $ENVRC_RUN != yes ]] && source /etc/envrc' >> /etc/zsh/zshrc
+RUN echo 'if [ "$(id -u)" != 0 ]; then eval "$(direnv hook zsh)"; fi' >> /etc/zsh/zshrc
 
 RUN curl --fail --silent --show-error --location https://dprint.dev/install.sh | DPRINT_INSTALL="/usr/local" sh
 RUN which dprint
