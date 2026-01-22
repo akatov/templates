@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "chrome": "chromium --remote-debugging-port=9222 --headless=new --no-sandbox --disable-gpu --no-first-run 2>&1",
     "check": "tsc --build",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "eslint",

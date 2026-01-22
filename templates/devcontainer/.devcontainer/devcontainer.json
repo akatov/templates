@@ -17,7 +17,7 @@
   "workspaceFolder": "/code",
   "workspaceMount": "source=${localWorkspaceFolder},target=/code,type=bind,consistency=cached",
   "mounts": [
-    "source=${localWorkspaceFolder}/.devcontainer/.claude,target=/home/node/.claude,type=bind,consistency=delegated",
+    "source=${localWorkspaceFolder}/.devcontainer/.claude,target=/home/code/.claude,type=bind,consistency=delegated",
     "target=/code/node_modules,type=volume",
     "target=/code/.pnpm-store,type=volume",
     "target=/code/tmp,type=volume"
@@ -38,6 +38,7 @@
         "ms-python.pylint",
         "ms-python.python",
         "ms-python.vscode-pylance",
+        "pinage404.nix-extension-pack",
         "statelyai.stately-vscode",
         "tamasfe.even-better-toml",
         "vitest.explorer"

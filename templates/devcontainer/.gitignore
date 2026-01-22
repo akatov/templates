@@ -1,3 +1,5 @@
+/.direnv
+
 /node_modules/
 .pnpm-store/
 
@@ -7,3 +9,5 @@
 
 /var
 /tmp
+
+/.claude/settings.local.json
