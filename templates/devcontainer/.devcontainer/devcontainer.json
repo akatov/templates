@@ -20,6 +20,7 @@
     "source=${localWorkspaceFolder}/.devcontainer/.claude,target=/home/code/.claude,type=bind,consistency=delegated",
     "target=/code/node_modules,type=volume",
     "target=/code/.pnpm-store,type=volume",
+    "target=/code/.venv,type=volume",
     "target=/code/tmp,type=volume"
   ],
 

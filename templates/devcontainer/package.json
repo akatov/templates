@@ -1,4 +1,6 @@
 {
+  "name": "placeholder",
+  "description": "a placeholder project",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@10.28.1",

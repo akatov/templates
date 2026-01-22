@@ -1,7 +1,10 @@
 /.direnv
 
-/node_modules/
-.pnpm-store/
+/node_modules
+/.pnpm-store
+
+/.venv
+__pycache__
 
 /.devcontainer/devcontainer.env
 !/.devcontainer/.claude/.gitkeep

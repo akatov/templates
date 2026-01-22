@@ -20,7 +20,7 @@
             corepack
             deno
             nodejs_24
-            python3
+            uv
             yq-go
           ];
         };

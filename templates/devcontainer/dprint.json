@@ -1,0 +1,5 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dprint/dprint/refs/heads/main/website/src/assets/schemas/v0.json",
+  "toml": {},
+  "plugins": ["https://plugins.dprint.dev/toml-0.7.0.wasm"]
+}
