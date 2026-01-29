@@ -3,5 +3,5 @@
 /tmp/
 
 /.devcontainer/devcontainer.env
-!/.devcontainer/.claude/.gitkeep
 /.devcontainer/.claude
+!/.devcontainer/.claude/.gitkeep

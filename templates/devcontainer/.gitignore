@@ -7,8 +7,8 @@
 __pycache__
 
 /.devcontainer/devcontainer.env
-!/.devcontainer/.claude/.gitkeep
 /.devcontainer/.claude
+!/.devcontainer/.claude/.gitkeep
 
 /var
 /tmp
